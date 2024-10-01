@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <title>Document</title> 
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            /* background-color: blueviolet; */
+            /* color: aliceblue; */
+        }
+        .img-fluid{
+            border: 1px solid;
+            border: radius 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+   <h1 class=h my-4><b> Implementation of SIFT for detection of electronic waste </b></h1>
+
+    <p >
+        The implementation of Scale-Invariant Feature Transform (SIFT) for the detection of electronic waste presents a promising solution to the growing challenge of managing e-waste. By utilizing SIFT-based object recognition through picture processing, this project aims to address the complexities associated with identifying electronic trash at disposal sites. SIFT offers a robust approach to feature extraction, allowing for the recognition of objects despite variations in angle, size, and illumination. This method's effectiveness lies in its ability to extract multiple features simultaneously, enhancing the accuracy of e-waste detection. In conjunction with other techniques such as inducting sources and X-ray technology, SIFT provides a comprehensive approach to sorting and categorizing electronic waste materials. Through the implementation of advanced image processing algorithms and innovative technologies, this project seeks to improve the efficiency of waste management practices and mitigate the environmental impact of e-waste accumulation.
+
+    </p>
+
+ <div class="row">
+    <div class="col-6">
+        <img src="{% static 'images/w2.jpg' %}" alt="My image" class="img-fluid my-2">
+    </div>
+    <div class="col-6">
+        <img src="{% static 'images/w11.jpg' %}" alt="My image" class="img-fluid my-2 " style="height: 440px;" >
+    </div>
+ </div>
+
+
+
+    </div>
+</body>
+</html>

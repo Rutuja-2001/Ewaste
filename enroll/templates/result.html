@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Result</h1>
+        {% if message %}
+            <div class="alert alert-primary text-center" role="alert">{{ message }}</div>
+        {% endif %}
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {% if uploaded_image %}
+                    <div class="mb-4">
+                        <h2 class="text-center">Uploaded Image</h2>
+                        <img src="{{ uploaded_image }}" class="img-fluid" alt="Uploaded Image">
+                    </div>
+                {% endif %}
+                {% if predicted_image_url %}
+                    <div class="mb-4">
+                        <h2 class="text-center">Predicted Image</h2>
+                        <img src="{{ MEDIA_URL }}{{ predicted_image_url }}" class="img-fluid" alt="Predicted Image">
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if detected_objects %}
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="text-center">Detected Objects</h2>
+                    <ul class="list-group">
+                        <ul class="list-group">
+                            {% for obj, count in detected_objects.items %}
+                                <li class="list-group-item">{{ obj }} (Count: {{ count }})</li>
+                            {% endfor %}
+                        </ul>
+                        
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+        <div class="text-center mt-4">
+            <a href="{% url 'upload' %}" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
